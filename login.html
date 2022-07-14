@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://b4k9s5.neocities.org/ -->
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录界面</title>
+    <link
+      rel="shortcut icon"
+      href="https://feihuduihng.github.io/website/The%20end.html"
+      type="image/x-icon"
+    />
+    <style>
+      * {
+        /*初始化*/
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        /*100%窗口高度*/
+        height: 100vh;
+        /*弹性布局*/
+        display: flex;
+        /*水平居中*/
+        justify-content: center;
+        /*垂直居中*/
+        align-items: center;
+        /*溢出隐藏*/
+        overflow: hidden;
+        margin: 0;
+        min-height: 100vh;
+        background-color: #40f2ff;
+        background-image: 
+          /*圆形渐变层*/ radial-gradient(
+            closest-side,
+            rgb(74, 195, 255),
+            rgba(235, 105, 78, 0)
+          ),
+          radial-gradient(
+            closest-side,
+            rgb(102, 249, 178),
+            rgba(243, 11, 164, 0)
+          ),
+          radial-gradient(
+            closest-side,
+            rgb(255, 214, 151),
+            rgba(254, 234, 131, 0)
+          ),
+          radial-gradient(
+            closest-side,
+            rgb(136, 93, 255),
+            rgba(170, 142, 245, 0)
+          ),
+          radial-gradient(
+            closest-side,
+            rgb(213, 62, 255),
+            rgba(248, 192, 147, 0)
+          );
+        background-size: 130vmax 130vmax, 80vmax 80vmax, 90vmax 90vmax,
+          110vmax 110vmax, 90vmax 90vmax;
+        background-position: -80vmax -80vmax, 60vmax -30vmax, 10vmax 10vmax,
+          -30vmax -10vmax, 50vmax 50vmax;
+        background-repeat: no-repeat;
+        animation: 6s movement linear infinite;
+      }
+
+      body::after {
+        content: "";
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      @keyframes movement {
+        0%,
+        100% {
+          background-size: 130vmax 130vmax, 80vmax 80vmax, 90vmax 90vmax,
+            110vmax 110vmax;
+          background-position: -80vmax -80vmax, 60vmax -30vmax, 10vmax 10vmax,
+            -30vmax -10vmax, 50vmax 50vmax;
+        }
+        25% {
+          background-size: 100vmax 100vmax, 90vmax 90vmax, 100vmax 100vmax,
+            90vmax 90vmax, 60vmax 60vmax;
+          background-position: -60vmax -90vmax, 50vmax -40vmax, 0vmax -20vmax,
+            -40vmax -20vmax, 40vmax 60vmax;
+        }
+        50% {
+          background-size: 80vmax 80vmax, 110vmax 110vmax, 80vmax 80vmax,
+            60vmax 60vmax, 80vmax 80vmax;
+          background-position: -50vmax -70vmax, 40vmax -30vmax, 10vmax 0vmax,
+            20vmax 10vmax, 30vmax 70vmax;
+        }
+        75% {
+          background-size: 90vmax 90vmax, 90vmax 90vmax, 100vmax 100vmax,
+            90vmax 90vmax, 70vmax 70vmax;
+          background-position: -50vmax -40vmax, 50vmax -30vmax, 20vmax 0vmax,
+            -10vmax 10vmax, 40vmax 60vmax;
+        }
+      }
+      /*登入框的总容器*/
+      .container {
+        /*相对定位*/
+        position: relative;
+        /*图层等级*/
+        z-index: 1;
+        /*背景颜色*/
+        background-color: rgba(255, 255, 255, 0.3);
+        /*圆角*/
+        border-radius: 10px;
+        /*弹性盒子*/
+        display: flex;
+        /*弹性布局，垂直方向*/
+        flex-direction: column;
+        /*水平居中*/
+        justify-content: center;
+        /*垂直居中*/
+        align-items: center;
+        /*宽度*/
+        width: 350px;
+        /*高度*/
+        height: 500px;
+        /*阴影*/
+        box-shadow: 5px 5px 180px 10px rgb(0, 0, 0);
+      }
+      /*登入框的容器*/
+      .container input {
+        /*输入框宽度*/
+        width: 270px;
+        /*输入框高度*/
+        height: 40px;
+        /*输入框内文字偏移*/
+        text-indent: 8px;
+        /*输入框不显示边框*/
+        border: none;
+        /*下边框线条宽度以及颜色*/
+        border-bottom: 1px solid rgb(85, 228, 178);
+        /*登入框轮廓不显示*/
+        outline: none;
+        /*登入框墙外宽度*/
+        margin: 12px auto;
+        background: none;
+      }
+      /*登入按键的容器*/
+      .container button {
+        /*登入按钮宽度*/
+        width: 280px;
+        /*登入按钮高度*/
+        height: 40px;
+        /*墙外宽*/
+        margin: 35px auto 40px auto;
+        /*边框不显示*/
+        border: none;
+        /*登入按钮渐变颜色*/
+        background: linear-gradient(-250deg, #27f6ef, #aaceee);
+        color: #ffff;
+        /*登入字体加粗*/
+        font-weight: bold;
+        /*登入按钮字间隔*/
+        letter-spacing: 8px;
+        /*登入按钮圆角*/
+        border-radius: 10px;
+        /*鼠标指示*/
+        cursor: pointer;
+        /*鼠标悬浮时过渡动画时长*/
+        transition: 1s;
+      }
+      /*鼠标悬浮的容器*/
+      .container button:hover {
+        /*鼠标悬浮时的渐变颜色*/
+        background: linear-gradient(-200deg, #66c9e9, #fac0e7);
+        /*鼠标悬浮时显示动画以及动画方向*/
+        background-position-x: -280px;
+      }
+      /*登入账号的容器*/
+      .container span {
+        /*字体大小*/
+        font-size: 14px;
+      }
+      /*去注册按钮的容器*/
+      .container a {
+        /*按钮的颜色*/
+        color: rgb(68, 165, 239);
+        /*按钮下划线不显示*/
+        text-decoration: none;
+      }
+      .zhiti {
+        display: flex;
+        margin: 8px;
+        background: linear-gradient(50deg, #37fff576, #81a6ff98);
+        font-weight: bold;
+        font-size: 10px;
+        padding: 0px 10px;
+        height: 25px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://feihuduihng.github.io/website/The%20end.html"> </a>
+    <div class="container">
+      <a href="https://feihuduihng.github.io/website/The%20end.html">
+        <img
+          src="https://i.postimg.cc/QMKJ0yXx/976205442-4860ef3b43bcdd51f8f2c048e3cf5922.jpg"
+          style="border-radius: 5px; border: 2px solid green"
+          alt="图片加载超时"
+          width="80px"
+          height="80px"
+      /></a>
+      <div class="zhiti">
+        <p style="color: #3a95a9">点击图片发现新世界</p>
+      </div>
+      <input type="text" placeholder="账号" />
+      <input type="password" placeholder="密码" />
+      <button style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.199)">
+        <a href="https://feihuduihng.github.io/website/The%20end.html">登入</a>
+      </button>
+      <span
+        >没有账号？<a
+          href="https://feihuduihng.github.io/website/The%20end.html"
+          target="_blank"
+          >去注册</a
+        >
+      </span>
+      <div style="font-size: 10px">
+        <a href="https://bilibili.com/">友情赞助</a>
+      </div>
+    </div>
+  </body>
+</html>
